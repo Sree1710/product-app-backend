@@ -21,6 +21,11 @@ app.post("/addp",async(request,response)=>{
     }
 })
 
+app.get("/viewp",async(request,response)=>{
+    let data=await productModel.find()
+    response.json(data)
+})
+
 app.listen(3001,()=>{
     console.log("Server is running")
 })
